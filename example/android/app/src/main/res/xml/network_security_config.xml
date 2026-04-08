@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <!-- 信任所有系统证书 -->
+        <trust-anchors>
+            <certificates src="system" />
+            <!-- 信任本机手动安装的证书（用于 Charles 等工具抓包） -->
+            <certificates src="user" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
