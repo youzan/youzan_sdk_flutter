@@ -18,17 +18,20 @@ dependencies:
   flutter:
     sdk: flutter
 
-  youzan_sdk_flutter:
-    # When depending on this package from a real application you should use:
-    #   youzan_sdk_flutter: ^x.y.z
-    # See https://dart.dev/tools/pub/dependencies#version-constraints
-    # The example app is bundled with the plugin so we use a path dependency on
-    # the parent directory to use the current plugin's version.
-    path: ../
+  youzan_sdk_flutter: 0.0.2
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+
+# [最佳实践配置] 
+# 在正常业务项目中，我们直接使用上方的 youzan_sdk_flutter: ^0.0.1 去拉取远端 pub 的包即可。
+# 但是对于经常需要修改源码的同体 Demo（或者临时想修 Bug 的时候），只要挂上下面这个 overrides，
+# Dart 编译器就会强制劫持，转而去吃上级目录 (../) 的本地源码配置。
+# 【快切提示】：想要测 pub 远端的包，只须把被下面两行注释掉，然后再执行 flutter pub get 即可！
+# dependency_overrides:
+#   youzan_sdk_flutter:
+#     path: ../
 
 dev_dependencies:
   flutter_test:
