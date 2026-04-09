@@ -18,7 +18,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  youzan_sdk_flutter: 0.0.2
+  youzan_sdk_flutter: 0.0.3
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -29,9 +29,9 @@ dependencies:
 # 但是对于经常需要修改源码的同体 Demo（或者临时想修 Bug 的时候），只要挂上下面这个 overrides，
 # Dart 编译器就会强制劫持，转而去吃上级目录 (../) 的本地源码配置。
 # 【快切提示】：想要测 pub 远端的包，只须把被下面两行注释掉，然后再执行 flutter pub get 即可！
-# dependency_overrides:
-#   youzan_sdk_flutter:
-#     path: ../
+dependency_overrides:
+  youzan_sdk_flutter:
+    path: ../
 
 dev_dependencies:
   flutter_test:

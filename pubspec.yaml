@@ -1,6 +1,6 @@
 name: youzan_sdk_flutter
 description: 为有赞移动端 SDK 提供的 Flutter 插件封装，内置 X5 安卓原生浏览器隔离层，支持 JSBridge 业务事件无缝拦截与 Hybrid 混合图层渲染。
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/youzan/youzan_sdk_flutter
 repository: https://github.com/youzan/youzan_sdk_flutter
 environment:

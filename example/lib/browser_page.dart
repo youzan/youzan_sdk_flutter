@@ -32,7 +32,18 @@ class _BrowserPageState extends State<BrowserPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return WillPopScope(
+      onWillPop: () async {
+        final res = await _browserController?.goBack();
+        final canGoBack = res != null && res['success'] == true;
+        if (canGoBack) {
+          _addLog('🔙 [返回键] WebView 回退成功，Flutter 页面保留');
+        } else {
+          _addLog('🔙 [返回键] WebView 已到顶，关闭 Flutter 页面');
+        }
+        return !canGoBack;
+      },
+      child: Scaffold(
       appBar: AppBar(
         title: Text(_pageTitle),
         actions: [
@@ -160,6 +171,6 @@ class _BrowserPageState extends State<BrowserPage> {
           ),
         ],
       ),
-    );
+    ));
   }
 }
